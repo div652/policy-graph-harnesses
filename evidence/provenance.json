@@ -49,6 +49,30 @@
       "matches_original_repository_HEAD": true,
       "original_file_redistributed": false
     },
+    "historical-mini-original-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-ahe-paper-faithful-gpt54mini-seed42/posthoc_baseline_test_3_trials/score_summary.json",
+      "sha256": "4e75596a67fdafd6328afafb3f1636dffcbb8679623369b28ed4a2dc892b715b",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "historical-mini-original-metrics": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-ahe-paper-faithful-gpt54mini-seed42/posthoc_baseline_test_3_trials/pass_metrics.json",
+      "sha256": "7d97d27e001f7766908a68f047a0da8e408a54389d0aea45be80e64978ae819e",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "historical-mini-original-report": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiment-reports/tau2-paper-faithful-gpt54mini-complete.md",
+      "sha256": "82b9d9056d4d966d83ff77d92e5ffd41727cb071d60b597ba2c27c2b7bd64ac3",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
     "historical-mini-summary": {
       "repository_archive": "telecom-development",
       "path_relative_to_original_archive": "experiments/tau2-telecom-ahe-paper-faithful-gpt54mini-sequential-debugger10-seed42/run_02/held_out/test/iteration_001/score_summary.json",

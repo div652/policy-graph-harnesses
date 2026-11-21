@@ -18,15 +18,16 @@ It supplied the public policy and tools to the model; skills, middleware,
 and sub-agent lists were empty and memory contained no evolved guidance.
 The model, rather than the policy-state graph, selected the next action.
 
-| Model | Historical successes | Test tasks x trials | Concurrency |
-|---|---:|---:|---:|
-| `gpt-5.4-mini` | 49/138 (35.51%) | 46 x 3 | 10 |
-| `Qwen/Qwen3-30B-A3B-Thinking-2507` | 44/138 (31.88%) | 46 x 3 | 10 |
+| Model | Historical evaluation | Successes | Test tasks x trials | Concurrency |
+|---|---|---:|---:|---:|
+| `gpt-5.4-mini` | Original post-hoc baseline | **59/138 (42.75%)** | 46 x 3 | 10 |
+| `gpt-5.4-mini` | Separate sequential-run baseline | 49/138 (35.51%) | 46 x 3 | 10 |
+| `Qwen/Qwen3-30B-A3B-Thinking-2507` | Post-hoc baseline | 44/138 (31.88%) | 46 x 3 | 10 |
 
-Both used the baseline workspace hash
+All three measurements used the baseline workspace hash
 `3ce98ba138600f130e4a816edba829e940a576e3300c4ef7a10b1ed4f821c70b`.
 The historical Qwen checkpoint revision matched the v3 graph evaluation.
-Both historical runs used `gpt-5.4` customers.
+All three historical evaluations used `gpt-5.4` customers.
 
 However, the historical split was **57 train / 11 validation / 46 test**,
 not the graph experiment's **74 train / 40 test**. Runner seeds, wall-clock
@@ -34,11 +35,30 @@ conditions, serving configurations, and controller protocols differed.
 Historical model-identity enforcement was also weaker than the later graph
 adapters' fail-closed checks.
 
-The historical mini reference is the unchanged checkpoint selected in the
-second sequential AHE run. The Qwen reference is its separately completed
-post-hoc base-agent evaluation. Neither was rerun for this publication.
-The raw score summaries, not only narrative reports, were checked for the
-published counts.
+The **42.75% mini reference** is the original experiment's post-hoc
+three-trial evaluation of the immutable iteration-1 baseline, with seed 20042.
+All 138 episodes were scored: trial successes were 20/46, 20/46, and 19/46.
+Of the 46 tasks, 27 passed at least once and 12 passed all three times.
+Two error-terminated episodes (`agent_error` and `user_error`) retained valid
+zero rewards; there were no unscored infrastructure errors.
+
+Its records are in the original
+`experiments/tau2-telecom-ahe-paper-faithful-gpt54mini-seed42/posthoc_baseline_test_3_trials/`
+archive, specifically `results.json`, `score_summary.json`, and
+`pass_metrics.json`. The source report is
+`experiment-reports/tau2-paper-faithful-gpt54mini-complete.md`.
+Aggregate source identities are recorded in
+[`provenance.json`](../evidence/provenance.json).
+
+The **35.51% mini reference** is a separate evaluation of the unchanged
+checkpoint selected in the second sequential AHE run, with seed 20043.
+These mini measurements use the same base-workspace and test-membership
+hashes, but different evaluation-protocol hashes and seeds. Neither result
+replaces the other or establishes deterministic baseline performance.
+
+The Qwen reference is its separately completed post-hoc base-agent evaluation.
+None was rerun for this publication. The original mini rewards were recounted
+directly; the other published counts were checked against their score summaries.
 
 No cross-protocol difference is presented as a causal graph uplift.
 

@@ -69,10 +69,15 @@ Its 49 reserved test tasks have not been evaluated.
 
 ### Historical non-graph baselines using the same models
 
-| Telecom runtime model | Historical non-graph base agent | Graph v3 |
-|---|---:|---:|
-| `gpt-5.4-mini` | 49/138 (35.51%) | 119/120 (99.17%) |
-| `Qwen/Qwen3-30B-A3B-Thinking-2507` | 44/138 (31.88%) | 115/120 (95.83%) |
+| Telecom runtime model | Historical evaluation | Non-graph baseline | Graph v3 |
+|---|---|---:|---:|
+| `gpt-5.4-mini` | Original post-hoc baseline | **59/138 (42.75%)** | 119/120 (99.17%) |
+| `gpt-5.4-mini` | Separate sequential-run baseline | 49/138 (35.51%) | 119/120 (99.17%) |
+| `Qwen/Qwen3-30B-A3B-Thinking-2507` | Post-hoc baseline | 44/138 (31.88%) | 115/120 (95.83%) |
+
+The original mini baseline scored **20/46, 20/46, and 19/46** across its three
+trials, totaling **42.75%**. The 35.51% row is a separate evaluation, not a
+different rounding of the same result. Both are retained.
 
 **These columns are context, not a controlled uplift comparison.** The
 historical base agents used a 57/11/46 train/validation/test split and 46 test

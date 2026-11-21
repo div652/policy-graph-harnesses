@@ -224,8 +224,12 @@ was folded into the reported v3.
 
 V1 -> v3 training and v2 -> v3 repeated testing are **same-model graph
 development comparisons**. Historical non-graph references exist for mini
-(49/138) and Qwen (44/138), but use a different test partition and execution
-protocol. They are not matched controls for the numbers above.
+(**59/138 = 42.75%** in the original post-hoc evaluation, and **49/138 = 35.51%**
+in a separate sequential-run evaluation) and Qwen (**44/138 = 31.88%**).
+The original mini baseline's trial scores were 20/46, 20/46, and 19/46.
+These historical evaluations use 46 test tasks rather than the graph's 40,
+with different execution protocols. They are not matched controls for the
+numbers above; both mini baseline measurements are retained.
 
 The frozen graph workspace hash was
 `357ee6d7b68dc7f8722c15d0a43e50735cb1b0704b24533758bf56c82e1cc10b`.

@@ -334,6 +334,68 @@
       "episode_attempts_including_documented_recovery": 164
     },
     {
+      "id": "historical-mini-original-posthoc",
+      "project": "historical-non-graph-reference",
+      "domain": "telecom",
+      "revision": "initial-base",
+      "runtime_model": "gpt-5.4-mini",
+      "customer_model": "gpt-5.4",
+      "phase": "historical_different_test_protocol",
+      "tasks": 46,
+      "trials_per_task": 3,
+      "planned_pairs": 138,
+      "attempted_unique_pairs": 138,
+      "scored_pairs": 138,
+      "successes": 59,
+      "valid_failures": 79,
+      "unscored_pairs": 0,
+      "success_fraction_planned": 0.427536231884058,
+      "success_rate_scored": 0.427536231884058,
+      "concurrency": 10,
+      "status": "complete",
+      "source_ids": [
+        "historical-mini-original-summary",
+        "historical-mini-original-metrics",
+        "historical-mini-original-report"
+      ],
+      "split_protocol": "historical_57_train_11_validation_46_test",
+      "matched_control_for_graph_experiment": false,
+      "workspace_sha256": "3ce98ba138600f130e4a816edba829e940a576e3300c4ef7a10b1ed4f821c70b",
+      "protocol_sha256": "e950bf33a7b378a1f8e1e3e9870397ad1ad36d401b74e319c01af4033a89418d",
+      "task_ids_sha256": "f2a1b4c77c3fbf1bb8d2ac4c006957696b59014761eca81a286f69f5433dae76",
+      "raw_results_sha256": "454e2b9d9f76fc7d32741bba3d57ea89229d04b1599243a92bb8fa205b1f62d5",
+      "runner_seed": 20042,
+      "original_termination_counts": {
+        "agent_error": 1,
+        "user_error": 1,
+        "user_stop": 136
+      },
+      "trial_successes": [
+        {
+          "trial_index_zero_based": 0,
+          "successes": 20,
+          "scored": 46
+        },
+        {
+          "trial_index_zero_based": 1,
+          "successes": 20,
+          "scored": 46
+        },
+        {
+          "trial_index_zero_based": 2,
+          "successes": 19,
+          "scored": 46
+        }
+      ],
+      "consistency_histogram": {
+        "0": 19,
+        "1": 7,
+        "2": 8,
+        "3": 12
+      },
+      "note": "Original post-hoc mini baseline: 59/138 (42.75%). Distinct from the separately retained 49/138 sequential-run baseline; not a new run or a matched control for the graph's 40-task test set."
+    },
+    {
       "id": "historical-mini",
       "project": "historical-non-graph-reference",
       "domain": "telecom",

@@ -5,6 +5,7 @@ telecom-v2-test,telecom-graph,telecom,v2,gpt-5.4-mini,held_out_at_evaluation,40,
 telecom-v3-mini-train,telecom-graph,telecom,v3,gpt-5.4-mini,training,74,1,74,74,74,73,1,0,0.9864864864864865,0.9864864864864865,20,complete
 telecom-v3-mini-test,telecom-graph,telecom,v3,gpt-5.4-mini,known_test_rerun,40,3,120,120,120,119,1,0,0.9916666666666667,0.9916666666666667,20,complete
 telecom-v3-qwen-test,telecom-graph,telecom,v3,Qwen/Qwen3-30B-A3B-Thinking-2507,known_test_rerun,40,3,120,120,120,115,5,0,0.9583333333333334,0.9583333333333334,6,complete
+historical-mini-original-posthoc,historical-non-graph-reference,telecom,initial-base,gpt-5.4-mini,historical_different_test_protocol,46,3,138,138,138,59,79,0,0.427536231884058,0.427536231884058,10,complete
 historical-mini,historical-non-graph-reference,telecom,initial-base,gpt-5.4-mini,historical_different_test_protocol,46,3,138,138,138,49,89,0,0.35507246376811596,0.35507246376811596,10,complete
 historical-qwen,historical-non-graph-reference,telecom,initial-base,Qwen/Qwen3-30B-A3B-Thinking-2507,historical_different_test_protocol,46,3,138,138,138,44,94,0,0.3188405797101449,0.3188405797101449,10,complete
 retail-airline-r1-airline,retail-airline-graph,airline,pass-1,gpt-5.4-mini,training,35,1,35,35,35,23,12,0,0.6571428571428571,0.6571428571428571,10,complete

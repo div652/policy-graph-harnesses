@@ -98,11 +98,13 @@ Evidence is extracted through field allowlists. It excludes task-level
 identifiers, descriptions, transcripts, environment values, and local host or
 account metadata.
 
-The historical non-graph narrative reports were untracked local files at
-publication. Their headline counts were independently checked against saved
-score summaries. The provenance manifest marks whether each source file was
-tracked; a repository HEAD is not presented as proof that an untracked result
-was committed.
+The sequential-mini and Qwen historical narrative reports were untracked
+local files at publication; their counts were checked against saved score
+summaries. The original mini post-hoc report documenting **59/138 (42.75%)**
+was tracked, while its score summary and detailed aggregate metrics were
+untracked archive files. Its original episode rewards were also recounted.
+The provenance manifest marks whether each source file was tracked; a
+repository HEAD is not proof that an untracked result was committed.
 
 Hashes establish which retained file a claim refers to. They are not a
 signature, a substitute for publishing that file, or independent validation
