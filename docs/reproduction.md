@@ -88,9 +88,11 @@ HEAD. Earlier attempts and rejected preparations were preserved separately.
 ## Evidence files
 
 - [`results.json`](../evidence/results.json): selected aggregate fields from
-  original score summaries, with explicit protocol/comparability labels.
+  original score summaries, plus a separate `reconstructed_baselines` section
+  with the primary 46.67% estimate and its observed-versus-weighted counts.
 - [`results.csv`](../evidence/results.csv): flat cohort counts for spreadsheet
-  inspection. Partial-run and historical-reference rows retain their status.
+  inspection. Partial-run and historical-reference rows retain their status;
+  reconstructed estimates are not added as measured cohorts.
 - [`provenance.json`](../evidence/provenance.json): source-relative archive
   paths, SHA-256 hashes, tracking status, and source repository identities.
 
@@ -105,6 +107,23 @@ was tracked, while its score summary and detailed aggregate metrics were
 untracked archive files. Its original episode rewards were also recounted.
 The provenance manifest marks whether each source file was tracked; a
 repository HEAD is not proof that an untracked result was committed.
+
+The **46.67% official-40 reconstruction** uses only the unchanged initial
+mini baseline from three historical phases. Its six source files are the
+`results.json` and `score_summary.json` in each directory listed in
+[measurement](measurement.md#primary-40-task-baseline-reconstruction).
+Those archive files are untracked; their SHA-256 identities are retained.
+The official membership file is identified at the pinned benchmark commit,
+not by the current working copy.
+
+To reconstruct the aggregate, filter each source's `simulations` to that
+official `test` membership using `task_id`, retain every selected valid
+`reward_info.reward`, and group by task. Check that the phase subsets are
+disjoint and their union contains all 40 tasks. Average each task's available
+rewards, then average the 40 means. This yields `(8 + 1 + 29/3) / 40`.
+Do not duplicate rows to manufacture three trials, combine this subset with
+the overlapping 46-task reference, or count the normalized 120 weight units
+as episode attempts.
 
 Hashes establish which retained file a claim refers to. They are not a
 signature, a substitute for publishing that file, or independent validation

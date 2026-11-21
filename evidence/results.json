@@ -1,11 +1,103 @@
 {
   "schema_version": 1,
-  "description": "Curated aggregate counts, not raw trajectories or a runnable benchmark release.",
+  "description": "Curated aggregate counts and explicitly labeled historical reconstructions, not raw trajectories or a runnable benchmark release.",
   "benchmark_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
   "qwen_checkpoint_revision": "144afc2f379b542fdd4e85a1fcd5e1f79112d95d",
   "matched_no_graph_controls_for_graph_cohorts": false,
   "usage_tokens": null,
   "cost": null,
+  "reconstructed_baselines": [
+    {
+      "id": "historical-mini-official40-reconstructed",
+      "domain": "telecom",
+      "runtime_model": "gpt-5.4-mini",
+      "customer_model": "gpt-5.4",
+      "revision": "initial-base",
+      "status": "historical_reconstruction",
+      "primary_non_graph_baseline_for": "telecom-v3-mini-test",
+      "tasks": 40,
+      "task_membership": "official_telecom_test",
+      "task_membership_matches_graph_test": true,
+      "matched_control_for_graph_experiment": false,
+      "workspace_sha256": "3ce98ba138600f130e4a816edba829e940a576e3300c4ef7a10b1ed4f821c70b",
+      "protocol_sha256": "e950bf33a7b378a1f8e1e3e9870397ad1ad36d401b74e319c01af4033a89418d",
+      "observed_trials_per_task_histogram": {
+        "1": 20,
+        "3": 20
+      },
+      "observed_scored_pairs": 80,
+      "observed_successes": 38,
+      "observed_valid_failures": 42,
+      "observed_unscored_pairs": 0,
+      "aggregation": "mean_of_per_task_observed_success_rates",
+      "task_balanced_success_rate": 0.4666666666666667,
+      "task_balanced_success_rate_exact": "7/15",
+      "formula": "(8 + 1 + 29/3) / 40",
+      "three_trial_equivalent": {
+        "weight_units_per_task": 3,
+        "weighted_success_units": 56,
+        "total_weight_units": 120,
+        "complete_observed_three_trial_grid": false,
+        "absent_observations_for_complete_grid": 40,
+        "note": "Normalization only: 56/120 is not an observed success/episode count, and does not establish low variance."
+      },
+      "first_recorded_trial_per_task": {
+        "successes": 18,
+        "scored_pairs": 40,
+        "success_rate": 0.45
+      },
+      "pooled_observed_episode_success_rate": 0.475,
+      "new_model_calls": 0,
+      "subsets": [
+        {
+          "historical_partition": "training",
+          "tasks": 18,
+          "observed_trials_per_task": 1,
+          "observed_scored_pairs": 18,
+          "observed_successes": 8,
+          "runner_seed": 42,
+          "source_ids": [
+            "historical-mini-initial-train-results",
+            "historical-mini-initial-train-summary"
+          ]
+        },
+        {
+          "historical_partition": "validation",
+          "tasks": 2,
+          "observed_trials_per_task": 1,
+          "observed_scored_pairs": 2,
+          "observed_successes": 1,
+          "runner_seed": 10042,
+          "source_ids": [
+            "historical-mini-initial-validation-results",
+            "historical-mini-initial-validation-summary"
+          ]
+        },
+        {
+          "historical_partition": "testing",
+          "tasks": 20,
+          "observed_trials_per_task": 3,
+          "observed_scored_pairs": 60,
+          "observed_successes": 29,
+          "runner_seed": 20042,
+          "source_ids": [
+            "historical-mini-original-results",
+            "historical-mini-original-summary"
+          ]
+        }
+      ],
+      "source_ids": [
+        "benchmark-telecom-official-split",
+        "historical-mini-initial-train-results",
+        "historical-mini-initial-train-summary",
+        "historical-mini-initial-validation-results",
+        "historical-mini-initial-validation-summary",
+        "historical-mini-original-results",
+        "historical-mini-original-summary"
+      ],
+      "note": "Same 40 task identities as the graph, but mixed one- and three-run historical coverage and a different execution protocol. Not a new 40-task x 3-trial evaluation. The testing subset overlaps the historical-mini-original-posthoc cohort; do not add their counts."
+    }
+  ],
   "cohorts": [
     {
       "id": "telecom-v1-train",
@@ -1957,7 +2049,8 @@
   "notes": [
     "Domain rows and combined retail/airline rows overlap; never add both.",
     "Partial-run planned success is an observed-to-date fraction, not completed cohort accuracy.",
-    "Historical non-graph references use a different task partition and protocol.",
+    "Historical non-graph cohort references use a different task partition and protocol; the separately labeled reconstruction matches the graph's 40 task identities, not its execution protocol.",
+    "Reconstructed-baseline weight units are not observed episodes and are excluded from cohort and attempt totals.",
     "Cohort counts describe retained outcomes; separate recovery accounting includes extra attempts.",
     "Raw status labels are retained even when subsequent analysis identified a more precise failure mechanism."
   ]

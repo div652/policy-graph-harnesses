@@ -45,6 +45,23 @@ code and contracts; no model weights were trained.
 
 ## Baselines and final results
 
+### Primary telecom baseline: the same 40 test tasks
+
+The primary non-graph baseline for `gpt-5.4-mini` is **46.67%**, reconstructed
+from historical evaluations of the graph's exact 40 official test tasks.
+
+| Controller | Success rate | Evidence |
+|---|---:|---|
+| Non-graph baseline, `gpt-5.4-mini` | **46.67%** | Task-balanced historical reconstruction; 80 recorded episodes |
+| Graph v3, `gpt-5.4-mini` | **99.17%** | 119/120 observed successes; 40 tasks x 3 runs |
+
+The baseline uses **three-trial-equivalent weighting**, not three observed
+runs for every task: 20 tasks have one recorded run each, and 20 have three.
+Giving every task equal weight yields `(8 + 1 + 29/3) / 40 = 46.67%`.
+The same task membership improves the relevance of the comparison, but
+the reconstruction is not a newly executed or protocol-matched control.
+See [the calculation and source breakdown](docs/measurement.md#primary-40-task-baseline-reconstruction).
+
 ### Same-model graph-development baseline
 
 These compare an **initial graph** with later graphs using `gpt-5.4-mini`.
@@ -67,11 +84,11 @@ the latest pass 7: **76/115 planned (66.09%)** versus **70/115 (60.87%)**.
 Pass 7 had 103 scored episodes and 12 unscored model-output errors.
 Its 49 reserved test tasks have not been evaluated.
 
-### Historical non-graph baselines using the same models
+### Other historical non-graph references
 
 | Telecom runtime model | Historical evaluation | Non-graph baseline | Graph v3 |
 |---|---|---:|---:|
-| `gpt-5.4-mini` | Original post-hoc baseline | **59/138 (42.75%)** | 119/120 (99.17%) |
+| `gpt-5.4-mini` | Original post-hoc baseline | 59/138 (42.75%) | 119/120 (99.17%) |
 | `gpt-5.4-mini` | Separate sequential-run baseline | 49/138 (35.51%) | 119/120 (99.17%) |
 | `Qwen/Qwen3-30B-A3B-Thinking-2507` | Post-hoc baseline | 44/138 (31.88%) | 115/120 (95.83%) |
 
@@ -84,7 +101,10 @@ historical base agents used a 57/11/46 train/validation/test split and 46 test
 tasks x 3; the graph project used the official 74/40 split and 40 test tasks
 x 3. Serving conditions also differed. The historical agent was an
 `LLMAgent`-based editable harness, not a claimed byte-identical stock-agent
-control. **No matched no-graph baseline was measured for these graph cohorts.**
+control. The 46-task historical test set overlaps only 20 of the graph's 40
+test tasks; the primary reconstruction above also uses unchanged-baseline
+records from the historical training and validation partitions.
+**No protocol-matched no-graph baseline was measured for these graph cohorts.**
 
 ### Important interpretation
 

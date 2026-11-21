@@ -5,11 +5,77 @@
 | Baseline type | What it answers | Evidence available here |
 |---|---|---|
 | Initial graph, same runtime model | Did graph development improve the measured controller? | Telecom and retail/airline training; telecom v2 -> v3 test rerun |
-| Historical non-graph agent, same named model | What did another recorded agent setup score? | Telecom mini and Qwen, on a different test split |
+| Historical non-graph agent, same named model | What did another recorded agent setup score? | Mini: same-task reconstruction; mini and Qwen: different-split references |
 | Matched no-graph control | What is the graph's effect under otherwise matched conditions? | **Not measured for these graph cohorts** |
 
 Do not call an initial graph a "without graph" baseline. Do not call the
 historical base agent byte-identical to the stock benchmark agent.
+
+### Primary 40-task baseline reconstruction
+
+Use **46.67%** as the primary `gpt-5.4-mini` non-graph baseline for the
+graph's exact 40 official telecom test tasks. This is a task-balanced
+historical reconstruction, not a new evaluation.
+
+The older AHE experiment partitioned the same 114 base tasks into 57 training,
+11 validation, and 46 testing tasks. The official 40-task test set is spread
+across those partitions. Selecting only the unchanged initial baseline gives:
+
+| Historical partition | Official-test tasks | Recorded runs per task | Observed successes / episodes | Runner seed |
+|---|---:|---:|---:|---:|
+| Training | 18 | 1 | 8/18 | 42 |
+| Validation | 2 | 1 | 1/2 | 10042 |
+| Testing | 20 | 3 | 29/60 | 20042 |
+| **Total** | **40** | **Mixed** | **38/80** | Mixed |
+
+The subsets are disjoint and cover exactly the graph's test membership.
+All selected episodes have valid rewards. Their source summaries share
+baseline workspace SHA-256
+`3ce98ba138600f130e4a816edba829e940a576e3300c4ef7a10b1ed4f821c70b`
+and historical protocol SHA-256
+`e950bf33a7b378a1f8e1e3e9870397ad1ad36d401b74e319c01af4033a89418d`.
+No evolved-controller outcomes enter this baseline.
+
+First average each task's available rewards, then average those 40 task means:
+
+```text
+task-balanced baseline = (8 + 1 + 29/3) / 40 = 46.67%
+
+Equivalent normalization to three units of weight per task:
+(3*8 + 3*1 + 29) / (40*3) = 56 weighted success units / 120 units = 46.67%
+```
+
+**Three-trial-equivalent weighting is not three observed runs per task.**
+The normalized 56/120 is an accounting equivalent, not 56 observed successes
+in 120 episodes. Only 80 episodes were recorded; 40 observations needed for
+a complete three-trial grid are absent. Weighting adds neither observations
+nor evidence of low variance.
+
+Pooling the recorded episodes instead gives **38/80 = 47.50%**, which gives
+the 20 three-run tasks three times the weight of the one-run tasks. Using only
+the first recorded trial per task gives **18/40 = 45.00%**. Neither replaces
+the chosen equal-task estimate.
+
+The source directories, relative to
+`experiments/tau2-telecom-ahe-paper-faithful-gpt54mini-seed42/`, are:
+
+| Partition | Directory containing `results.json` and `score_summary.json` |
+|---|---|
+| Training | `run_01/runs/iteration_001/input/benchmark/tau2-raw/` |
+| Validation | `run_01/held_out/validation/iteration_001/` |
+| Testing | `posthoc_baseline_test_3_trials/` |
+
+Membership comes from the pinned benchmark's
+`data/tau2/domains/telecom/split_tasks.json`, `test` entry. The
+[`reconstructed_baselines` evidence](../evidence/results.json) records the
+aggregate calculation separately from measured cohorts, and
+[`provenance.json`](../evidence/provenance.json) identifies the raw source
+files and pinned split. No new model calls were made.
+
+The graph v3 result is **119/120 = 99.17%**, with three actual runs per task.
+The reconstruction matches its task membership, not its full execution
+protocol or trial coverage; this remains a descriptive comparison, not a
+controlled estimate of causal uplift.
 
 ### Historical non-graph references
 

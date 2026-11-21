@@ -222,14 +222,28 @@ was folded into the reported v3.
 
 ## Baseline interpretation and provenance
 
+The primary non-graph baseline is **46.67% with `gpt-5.4-mini`**, reconstructed
+on the graph's exact 40 official test tasks. Graph v3 scored **99.17%**
+(119/120) on those tasks with three actual runs per task.
+
+The historical unchanged baseline supplies 8/18 successes from its training
+partition, 1/2 from validation, and 29/60 from testing. The first two subsets
+have one recorded run per task; the last has three. Equal task weighting
+gives `(8 + 1 + 29/3) / 40 = 46.67%`. In three-trial-equivalent units,
+this is `(3*8 + 3*1 + 29) / 120`, **not 120 observed episodes**.
+The baseline contains 80 recorded episodes, and no new runs were performed.
+Matching membership does not make the historical execution protocol a
+matched control for v3.
+
 V1 -> v3 training and v2 -> v3 repeated testing are **same-model graph
-development comparisons**. Historical non-graph references exist for mini
+development comparisons**. Other historical non-graph references exist for mini
 (**59/138 = 42.75%** in the original post-hoc evaluation, and **49/138 = 35.51%**
 in a separate sequential-run evaluation) and Qwen (**44/138 = 31.88%**).
 The original mini baseline's trial scores were 20/46, 20/46, and 19/46.
 These historical evaluations use 46 test tasks rather than the graph's 40,
 with different execution protocols. They are not matched controls for the
-numbers above; both mini baseline measurements are retained.
+numbers above; both 46-task mini measurements are retained as historical
+references rather than the primary 40-task baseline.
 
 The frozen graph workspace hash was
 `357ee6d7b68dc7f8722c15d0a43e50735cb1b0704b24533758bf56c82e1cc10b`.
