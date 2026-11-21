@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "source_files": {
+    "telecom-v1-train-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-graph-v1-formatfix-initfix-train74-gpt54mini-20261006/recovery-timeouts-01/summary.json",
+      "sha256": "dc9ddd4297491b7a52eb271ba6134ca51b25e47df092d9c04ca0bea8403aac14",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "telecom-v2-train-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-graph-v2-train74-gpt54mini-20261007/summary.json",
+      "sha256": "c7a2a8944fd6f005a0714ede5d66e3b2643c8d6d6786e4c72bfaceb680abbfa3",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "telecom-v2-test-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-graph-v2-test40-three-trials-gpt54mini-20261007/summary.json",
+      "sha256": "4549ec6a8033f6460643ff80ef132a64dbc9b6013bed1aa049aa011a47ded9e3",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "telecom-v3-mini-train-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-graph-v3-mini-qwen-20261007/cohorts/mini-train/summary.json",
+      "sha256": "dff4cdbd2882f67584c7cd7e24aa7509fe9450200a993ca7779aee550956de66",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "telecom-v3-mini-test-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-graph-v3-mini-qwen-20261007/cohorts/mini-test/summary.json",
+      "sha256": "18e2915c7f32cffc46eaaa95cb548ce8d3c9e12f86b6adc7a47c07c19fa52c04",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "telecom-v3-qwen-test-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-graph-v3-mini-qwen-20261007/recovery-01/summary.json",
+      "sha256": "5e00f632d43bcd2446f7626e1990add59e576924430967245836762c6096597c",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "historical-mini-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-ahe-paper-faithful-gpt54mini-sequential-debugger10-seed42/run_02/held_out/test/iteration_001/score_summary.json",
+      "sha256": "70762d84b7d5ff9e8aa0459bff9492828d93607390de7726cd3c4b18920e3058",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "historical-qwen-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-ahe-paper-faithful-qwen30ba3b-sequential-seed42/posthoc_run1_baseline_test_3_trials/score_summary.json",
+      "sha256": "4cc533c68416220c6893ee7751304dc1941a93da7ec457bd987d51b2e34ce374",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r1-summary": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/baseline-train-20261007-ready/summary.json",
+      "sha256": "c83917c7b94ef1639ace969f94e0207662cd0db36db60984d19f645cd4fd70ad",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r1-freeze": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/baseline-train-20261007-ready/frozen.json",
+      "sha256": "6013e8d0f58bf99d98cc06961fcc9baa8a6399b9c1de7990d94a6231d0c92763",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r2-summary": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round2-train-20261007/summary.json",
+      "sha256": "e29bbc36a76bf016193b93ff08cf84c6416e9f0d47e95e69327d6baff2bd5af0",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r2-freeze": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round2-train-20261007/frozen.json",
+      "sha256": "ebad7d46187e146d3b3b111940d3a7f2e3d0bff0c4c855808f7020071426c78f",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r3-summary": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round3-train-20261007-candidate3/summary.json",
+      "sha256": "ca864edbaef489155eb76c136bba4542194c5bef48f2d90b37fa38c3a61515b8",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r3-freeze": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round3-train-20261007-candidate3/frozen.json",
+      "sha256": "8b55ca3b6839313132fbd4962849882f7e2e5b3283263e70f04871b193c3281b",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r4-summary": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round4-train-20261008-candidate2/summary.json",
+      "sha256": "911bda02b780170fdd847c1e794f94b3753f2945addbbfe5f9391d3c5dcf26c3",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r4-freeze": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round4-train-20261008-candidate2/frozen.json",
+      "sha256": "5bab85107a12a4753bea0e6727c99a3505e6fa76057836111d9762076f0eb5bc",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r5-summary": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round5-train-20261008-candidate2/summary.json",
+      "sha256": "05aff063a69091726422ad0fc7a082213d95b33b52ff3e735cfdb2548ccb3176",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r5-freeze": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round5-train-20261008-candidate2/frozen.json",
+      "sha256": "84aab12ae329b7d135b4bbbd35eb7581fd0e965e4ee51518b768f7fd73f77de9",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r6-summary": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round6-train-20261009-candidate1/summary.json",
+      "sha256": "35d9292c086606c85cef1e5de2b3b39a04562c0991de5ec0de42235ae8f81731",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r6-freeze": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round6-train-20261009-candidate1/frozen.json",
+      "sha256": "bf471a1725ca74c6e175784d469d50ed6c56a4bb107ff0d79573fdd155120018",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r7-summary": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round7-train-20261009-candidate2/summary.json",
+      "sha256": "38e527c0de632f8580ed24e9d5bed149edded45a5b8aebb8e157222086c502cf",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r7-freeze": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "artifacts/round7-train-20261009-candidate2/frozen.json",
+      "sha256": "6f685bba05e37a159ac4e48f0c73b872accc3625f98fcd5135edfcf045c97ce4",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "method-playbook": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiment-reports/policy-to-state-graph-harness-playbook.md",
+      "sha256": "59e3ac7ff44b277d501979d3ebfb0e93824f0c84336e08db20f50aab23966f70",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "telecom-method": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiment-reports/tau2-telecom-graph-method-and-v1-v2-diff.md",
+      "sha256": "5fbce8d8bd037a9b598605ecbad78459e39d0b0a055b60dee3a6104a192dd800",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "telecom-v1-report": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiment-reports/tau2-telecom-graph-v1-train74-gpt54mini.md",
+      "sha256": "550811582491a270b259a8317c43f0a7d7914d46a6056fcf81e134bfe6b28fee",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "telecom-v3-report": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiment-reports/tau2-telecom-graph-v3-mini-qwen-evaluation.md",
+      "sha256": "94b35808b627f9fa73c82e471da7281251f5cd9732aded0da6ba651a8f4e27c0",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "historical-mini-report": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiment-reports/tau2-paper-faithful-gpt54mini-sequential-debugger10-complete.md",
+      "sha256": "f087f5dcd183678bb4753eee15217825f2e277b1ddd5da1536bfb3e883b458dd",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "historical-qwen-report": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiment-reports/tau2-paper-faithful-qwen-run1-comparison.md",
+      "sha256": "de248bd328b2d591a5743dce0a7fc18f40580b1f9b1b375cc796e05cab97ff6f",
+      "tracked_at_publication": false,
+      "matches_original_repository_HEAD": null,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r2-report": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "reports/007-round2-results.md",
+      "sha256": "ce36a55700115aef3fa9c4ff8ea1a038fa91538113ce31b74b0d04d4b3104f8c",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r4-report": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "reports/012-evidence-led-training.md",
+      "sha256": "2a4e952800c7c39ce4e8c2ee6bcf565cabe1b2cc037b2e964d389a93ec6c438b",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r6-report": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "reports/014-scoped-selection-repair.md",
+      "sha256": "c60d281fdb5ec8234c0963ff766956fd8b7228965d744b99492d65d04f0d1c30",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "retail-airline-r7-report": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "reports/015-recoverable-selection-repair.md",
+      "sha256": "a76a1d02230eaf55f732536e4597c4ec46b19e0b2cfe5e826be8df5b3bbc037c",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "retail-airline-policy-ledger": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "docs/policy-ledger.md",
+      "sha256": "23f4756a376fd521c59ca1fb46f80eb2807196cf3686ac878952b67b907ab191",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "retail-airline-state-contracts": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "docs/state-and-operators.md",
+      "sha256": "f26951b498e2ad191edf01a7b056e84c843b67dfc1faeb7ee35c929fbf4f410b",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "baseline-task-results": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "reports/baseline-task-results.csv",
+      "sha256": "ae03f89dd626a135e12107f84674cd91828f1ec1cdffa8eb6c448018d2ddc2b1",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "round6-task-results": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "reports/round6-task-results.csv",
+      "sha256": "3049d74aa338da8b9a2ddc63a74ce24f6f7f2ccb18d2fa0d354512e76466c0bd",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "round7-task-results": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "reports/round7-task-results.csv",
+      "sha256": "254c454bdd62b3c1ef19a684037f84b2f3d007cdfe934beb80e216c8df80f751",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "retail-split-manifest": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "splits/retail.json",
+      "sha256": "29e2b06c031e4b2755668ce6da1f5c00dd2f18281d9a03cbecb68383e6a8aae5",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "airline-split-manifest": {
+      "repository_archive": "retail-airline-development",
+      "path_relative_to_original_archive": "splits/airline.json",
+      "sha256": "dd82f0a683dc05b404fa4064616e86078df3f5e9a4a5223d35c79b71d058d580",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    },
+    "telecom-v3-qwen-original-summary": {
+      "repository_archive": "telecom-development",
+      "path_relative_to_original_archive": "experiments/tau2-telecom-graph-v3-mini-qwen-20261007/cohorts/qwen-test/summary.json",
+      "sha256": "f247e3615d504d2739020c22d046a3cfd4c3683c9ae717dd72bdc180029c1f05",
+      "tracked_at_publication": true,
+      "matches_original_repository_HEAD": true,
+      "original_file_redistributed": false
+    }
+  },
+  "original_repository_heads_at_publication": {
+    "telecom-development": "7ea9d2eec27e821e36f79732da531ee8a5766a52",
+    "retail-airline-development": "c6b440a247535d0a7d79c368f8445056b6a2a04c"
+  },
+  "head_note": "HEAD identifies the inspected archive, not every evaluated snapshot or an untracked result.",
+  "sources_are_local_archive_references_not_public_download_links": true
+}
